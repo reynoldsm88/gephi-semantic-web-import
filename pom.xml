@@ -76,45 +76,6 @@
     <build>
         <!-- Plugins installed with versions -->
         <pluginManagement>
-            <plugins>
-                <plugin>
-                    <groupId>org.apache.netbeans.utilities</groupId>
-                    <artifactId>nb-repository-plugin</artifactId>
-                    <configuration>
-                        <netbeansInstallDirectory>${project.build.directory}/gephi-${gephi.version}</netbeansInstallDirectory>
-                        <netbeansNbmDirectory>/Users/edemairy/Developpement/update-semanticwebimport</netbeansNbmDirectory>
-                        <!--                        <forcedVersion>a.b.c</forcedVersion> -->
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <artifactId>maven-compiler-plugin</artifactId>
-                    <configuration>
-                        <source>11</source>
-                        <target>11</target>
-                    </configuration>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-dependency-plugin</artifactId>
-                    <version>3.2.0</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.netbeans.utilities</groupId>
-                    <artifactId>nbm-maven-plugin</artifactId>
-                    <version>4.8</version>
-                    <extensions>true</extensions>
-                </plugin>
-                <plugin>
-                    <groupId>org.gephi</groupId>
-                    <artifactId>gephi-maven-plugin</artifactId>
-                    <version>1.3.4</version>
-                </plugin>
-                <plugin>
-                    <groupId>org.apache.maven.plugins</groupId>
-                    <artifactId>maven-scm-publish-plugin</artifactId>
-                    <version>3.1.0</version>
-                </plugin>
-            </plugins>
         </pluginManagement>
         
         <!-- Plugins -->
@@ -163,28 +124,6 @@
                             <excludes>**/jre/**</excludes>
                             <excludes>**/jre-x64/**</excludes>
                         </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            
-            <!-- NBM Plugin -->
-            <plugin>
-                <groupId>org.apache.netbeans.utilities</groupId>
-                <artifactId>nbm-maven-plugin</artifactId>
-                <configuration>
-                    <nbmBuildDir>${clusters.path}</nbmBuildDir>
-                </configuration>
-                <executions>
-                    <execution>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>cluster</goal>
-                        </goals>
-                    </execution>
-                    <!-- Disable default-branding as it's only needed for the branding module -->
-                    <execution>
-                        <id>default-branding</id>
-                        <phase>none</phase>
                     </execution>
                 </executions>
             </plugin>
